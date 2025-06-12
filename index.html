@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">  
+    <title>Cassiopeia Obelidor</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <style>
+        /* Popup Modal Styles */
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .popup-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .popup-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+        }
+
+        .popup-content img {
+            max-width: 100%;
+            max-height: 80vh;
+            display: block;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .close-popup {
+            position: absolute;
+            top: -40px;
+            right: -10px;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            background: none;
+            border: none;
+            transition: transform 0.3s ease;
+        }
+
+        .close-popup:hover {
+            transform: rotate(90deg);
+        }
+
+        .works__card {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo" data-aos="zoom-in" data-aos-duration="1000">
+                <span>Cassie</span>
+            </div>
+            <div class="links">
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100"><a href="#">Home</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"><a href="#about">About</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"><a href="#skills">Skills</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400"><a href="#works">My Works</a></div>
+                <div class="link contact-btn" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600"><a href="#contact">Contact</a></div>
+            </div>
+            <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
+        </div>
+        <div class="dropdown">
+            <div class="links">
+                <a href="#">Home</a>
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#works">My Works</a>
+                <a href="#contact">Contact</a>
+                <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
+            </div>
+        </div>
+    </nav>
+    
+    <section>
+        <div class="main-container">
+            <div class="image" data-aos="zoom-in-right" data-aos-duration="2500">
+                <img src="home.png">
+            </div>
+            <div class="content">
+                <h1 data-aos="fade-left" data-aos-duration="1000" data-aos-delay="800">Hey I'm <span>Cassiopeia</span></h1>
+                <div class="typewriter" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="900">I'm a <span></span></div>
+                <p data-aos="flip-up" data-aos-duration="1000" data-aos-delay="1000">A fresh graduate with a Bachelor's degree in Information Technology and a passion for UI/UX design. I'm driven by the desire to create innovative and user-centric digital experiences that make a lasting impact. Welcome to my portfolio!</p>
+                <div class="social-links">  
+                    <a href="https://github.com/cassiepeia" target="_blank"><i class="fa-brands fa-github"></i></a>  
+                    <a href="https://www.facebook.com/cassiopeia.dugayobelidor/" target="_blank"><i class="fa-brands fa-facebook"></i></a>  
+                    <a href="https://www.linkedin.com/in/cassiopeia-obelidor-45067729a/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>  
+                    <a href="https://www.instagram.com/cssp_bldr/?next=%2F" target="_blank"><i class="fa-brands fa-instagram"></i></a>  
+                    
+                </div>  
+                <div class="btn" data-aos="zoom-out-left" data-aos-duration="1000" data-aos-delay="1300">
+                    <button id="downloadBtn">Download CV</button>
+                </div>             
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="about-container">
+            <div class="about-text" data-aos="fade-up" data-aos-duration="1000">
+                <h2>About Me</h2>
+                <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                    Hi, I'm Cassiopeia! I recently earned my Bachelor's degree in Information Technology, and I'm passionate about blending creativity and functionality to craft exceptional user experiences.
+                    As a UI/UX designer, I thrive on understanding user needs and translating them into intuitive, visually appealing designs. I believe that great design is not just about aesthetics but also about solving problems and making technology more accessible to everyone.
+                    I'm excited to contribute my skills and fresh perspectives to meaningful projects that drive innovation and make a positive impact. Let's collaborate and create something extraordinary together!
+                </p>
+            </div>
+            <div class="about-image" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+                <img src="aboutme.png" alt="Cassie" />
+            </div>
+        </div>
+    </section>
+    
+    <section class="section__container skills__container" id="skills">
+        <div class="skills__content">
+            <h2 class="section__header">Skills & Expertise</h2>
+            <p class="section__description">
+                I bring a diverse set of skills, blending technical expertise with strong personal qualities 
+                to deliver exceptional results in every project.
+            </p>
+            
+            <div class="skills__grid">
+                <!-- Technical Skills Column -->
+                <div class="skills__column" data-aos="fade-right" data-aos-duration="1000">
+                    <h3>Technical Skills</h3>
+                    <ul class="skills__list">
+                        <li><i class="fas fa-check-circle"></i> UI/UX Design</li>
+                        <li><i class="fas fa-check-circle"></i> Wireframing and Prototyping</li>
+                        <li><i class="fas fa-check-circle"></i> Visual and Interaction Design</li>
+                        <li><i class="fas fa-check-circle"></i> Frontend Development</li>
+                        <li><i class="fas fa-check-circle"></i> Backend Development</li>
+                        <li><i class="fas fa-check-circle"></i> Basic Cybersecurity</li>
+                        <li><i class="fas fa-check-circle"></i> Photography</li>
+                        <li><i class="fas fa-check-circle"></i> Basic Canva Design</li>
+                        <li><i class="fas fa-check-circle"></i> Google Suite & Microsoft Office</li>
+                    </ul>
+                </div>
+                
+                <!-- Personal Skills Column -->
+                <div class="skills__column" data-aos="fade-left" data-aos-duration="1000">
+                    <h3>Personal Skills</h3>
+                    <ul class="skills__list">
+                        <li><i class="fas fa-check-circle"></i> Active Listening</li>
+                        <li><i class="fas fa-check-circle"></i> Problem-solving</li>
+                        <li><i class="fas fa-check-circle"></i> Creativity</li>
+                        <li><i class="fas fa-check-circle"></i> Collaboration/Teamwork</li>
+                        <li><i class="fas fa-check-circle"></i> Emotional Intelligence</li>
+                        <li><i class="fas fa-check-circle"></i> Time Management</li>
+                        <li><i class="fas fa-check-circle"></i> Willing to Learn</li>
+                        <li><i class="fas fa-check-circle"></i> Responsible</li>
+                        <li><i class="fas fa-check-circle"></i> Trustworthy & Honest</li>
+                        <li><i class="fas fa-check-circle"></i> Organized</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section__container works__container" id="works">
+        <h2 class="section__header" data-aos="fade-up" data-aos-duration="1000"></h2>
+        <div class="works__grid">
+            <div class="works__card" data-aos="fade-up" data-aos-duration="1000">
+                <img src="Career Center Management System.jpg" alt="Career Center Management System" />
+                <div class="works__content">
+                    <h4>Career Center Management System</h4>                   
+                </div>
+            </div>
+            <div class="works__card" data-aos="fade-up" data-aos-duration="1000">
+                <img src="Logistic Management System for an Apparel Business.jpg" alt="Logistic Management System for an Apparel Business" />
+                <div class="works__content">
+                    <h4>Logistic Management System for an Apparel Business</h4>
+                </div>
+            </div>
+            <div class="works__card" data-aos="fade-up" data-aos-duration="1000">
+                <img src="Horoscope Project.jpg" alt="Horoscope Project" />
+                <div class="works__content">
+                    <h4>Horoscope Project</h4>
+                </div>
+            </div>
+            <div class="works__card" data-aos="fade-up" data-aos-duration="1000">
+                <img src="Complex Gallery.jpg" alt="Complex Gallery" />
+                <div class="works__content">
+                    <h4>Complex Gallery</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer class="footer" id="contact">
+    <div class="section__container footer__container">
+        <h2 class="section__header">Contact Me</h2>
+        <div class="contact-info">
+            <div class="contact-item">
+                <div class="contact-icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <div class="contact-details">
+                    <h4>Email</h4>
+                    <a href="mailto:obelidorcassiopeia@gmail.com">obelidorcassiopeia@gmail.com</a>
+                </div>
+            </div>
+            
+            <div class="contact-item">
+                <div class="contact-icon">
+                    <i class="fas fa-phone-alt"></i>
+                </div>
+                <div class="contact-details">
+                    <h4>Phone</h4>
+                    <a href="tel:+639663264511">+639663264511</a>
+                </div>
+            </div>
+            
+            <div class="contact-item">
+                <div class="contact-icon">
+                    <i class="fab fa-facebook-f"></i>
+                </div>
+                <div class="contact-details">
+                    <h4>Facebook</h4>
+                    <a href="https://www.facebook.com/cassiopeia.dugayobelidor/" target="_blank">@cassiopeia.dugayobelidor</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Popup Modal -->
+<div class="popup-overlay" id="popupOverlay">
+    <div class="popup-content">
+        <button class="close-popup" id="closePopup">&times;</button>
+        <img id="popupImage" src="" alt="">
+    </div>
+</div>
+    
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            offset: 120, // Adjust offset to trigger animations sooner or later
+            duration: 1000, // Animation duration
+            once: false, // Allow animations to reset and repeat as user scrolls
+        });
+
+        function hamburg() {
+            const navbar = document.querySelector(".dropdown");
+            navbar.style.transform = "translateY(0)";
+            navbar.style.visibility = "visible"; // Ensure visibility
+        }
+
+        function cancel() {
+            const navbar = document.querySelector(".dropdown");
+            navbar.style.transform = "translateY(-500px)";
+            navbar.style.visibility = "hidden"; // Hide only the dropdown
+        }
+
+        // Add an event listener to all dropdown links
+        document.querySelectorAll(".dropdown .links a").forEach(link => {
+            link.addEventListener("click", cancel); // Close the popup when a link is clicked
+        });
+
+        // Download CV functionality
+        document.getElementById('downloadBtn').addEventListener('click', function() {
+            // Make sure the CV file is in the same directory as your HTML file
+            const cvUrl = 'Cassiopeia Obelidor CV.pdf';
+            
+            // Create a temporary anchor element
+            const link = document.createElement('a');
+            link.href = cvUrl;
+            link.download = 'Cassiopeia_Obelidor_CV.pdf'; // This will be the suggested filename for download
+            
+            // Append to the document, trigger click, then remove
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        });
+
+        // Image popup functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const worksCards = document.querySelectorAll('.works__card');
+            const popupOverlay = document.getElementById('popupOverlay');
+            const popupImage = document.getElementById('popupImage');
+            const closePopup = document.getElementById('closePopup');
+            
+            // Add click event to each work card
+            worksCards.forEach(card => {
+                card.addEventListener('click', function(e) {
+                    // Check if the click was on the image
+                    const img = this.querySelector('img');
+                    if (img) {
+                        popupImage.src = img.src;
+                        popupImage.alt = img.alt;
+                        popupOverlay.classList.add('active');
+                        document.body.style.overflow = 'hidden'; // Prevent scrolling
+                    }
+                });
+            });
+            
+            // Close popup when clicking the X button
+            closePopup.addEventListener('click', function() {
+                popupOverlay.classList.remove('active');
+                document.body.style.overflow = ''; // Re-enable scrolling
+            });
+            
+            // Close popup when clicking anywhere outside the image
+            popupOverlay.addEventListener('click', function(e) {
+                if (e.target === popupOverlay) {
+                    popupOverlay.classList.remove('active');
+                    document.body.style.overflow = ''; // Re-enable scrolling
+                }
+            });
+            
+            // Close popup when pressing Escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && popupOverlay.classList.contains('active')) {
+                    popupOverlay.classList.remove('active');
+                    document.body.style.overflow = ''; // Re-enable scrolling
+                }
+            });
+        });
+    </script>
+</body>
+</html>

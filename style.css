@@ -1,0 +1,757 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+ body {
+    height: 100%; /* Ensure the full height of the page is used */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    overflow-y: auto; /* Allow vertical scrolling */
+    background: linear-gradient(to right, rgb(255,255,255), rgb(254,215,173));
+
+}
+
+section {
+    min-height: 100vh; /* Ensure each section spans at least the viewport height */
+    padding: 5rem 1rem;
+    text-align: center;
+    box-sizing: border-box; /* Include padding in height calculations */
+}
+
+nav {
+    width: 100%;
+    height: 10vh;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: #ffffff; /* Solid background color for the navigation bar */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for better visibility */
+    background: linear-gradient(to right, rgb(255, 255, 255), rgb(254, 215, 173));
+
+}
+
+.nav-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.logo {
+    color: black;
+    font-size: 2rem;
+    font-weight: bolder;
+}
+
+.logo span {
+    color: rgb(109, 67, 0); /* Brown color for "Cassie" */
+    text-shadow: none; /* Remove transparency or glowing effect */
+}
+
+.nav-container .links {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-container .links a {
+    position: relative;
+    font-size: 1.2rem;
+    color: black; /* Solid black text */
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-container .links a:hover {
+    color: rgb(109, 67, 0); /* Change color on hover */
+}
+
+.nav-container .links a::before {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: rgb(109, 67, 0); /* Brown underline effect */
+    transition: width 0.3s ease-in-out;
+}
+
+.nav-container .links a:hover::before {
+    width: 100%; /* Expand underline on hover */
+}
+
+.nav-container .contact-btn {
+    background-color: rgb(109, 67, 0); /* Brown background for the button */
+    padding: 5px 20px;
+    border-radius: 20px;
+    border: 2px solid rgb(109, 67, 0); /* Brown border */
+    transition: 0.3s;
+}
+
+.nav-container .contact-btn a {
+    color: white; /* White text for the button */
+}
+
+.nav-container .contact-btn:hover {
+    background-color: transparent;
+}
+
+.nav-container .contact-btn:hover a {
+    color: rgb(109, 67, 0); /* Text turns brown on hover */
+}
+
+.hamburg, .cancel {
+    cursor: pointer;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    color: black;
+    font-size: 2rem;
+    display: none; /* Only visible in mobile view */
+}
+
+.dropdown {
+    z-index: 100;
+    position: absolute;
+    top: 0;
+    transform: translateY(-500px);
+    width: 100%;
+    height: auto;
+    background-color: #ffffff; /* Solid background for dropdown */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: 0.3s ease-in-out;
+}
+
+.dropdown .links a {
+    color: black; /* Solid black text for dropdown links */
+    display: flex;
+    text-decoration: none;
+    justify-content: center;
+    padding: 15px 0;
+    align-items: center;
+}
+
+.dropdown .links a:hover {
+    background-color: rgb(109, 67, 0); /* Highlight background on hover */
+    color: white;
+}
+
+
+section {
+    padding: 5rem 1rem;
+    text-align: center;
+    section {
+        margin-bottom: 4rem; /* Add space below each section */
+    }
+}
+/* About Section Styling */
+#about {
+    background: linear-gradient(to right, rgb(255, 255, 255), rgb(254, 215, 173));
+    color: #000000;
+    padding: 2rem;
+    height: 100vh; /* Make the section take the full viewport height */
+    display: flex;
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+}
+
+.about-container {
+    display: flex;
+    align-items: center; /* Align text and image vertically in the middle */
+    justify-content: space-between; /* Space between text and image */
+    gap: 2rem;
+    width: 100%; /* Take full width of the parent */
+    max-width: 1200px; /* Limit the maximum width for better layout */
+}
+
+.about-text {
+    flex: 1;
+    text-align: left; /* Align text to the left */
+    max-width: 50%;
+}
+
+.about-image {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end; /* Position image on the right */
+}
+
+.about-image img {
+    max-width: 80%; /* Adjust image width */
+    height: auto;
+    border-radius: 10px; /* Add rounded corners */
+}
+
+/* Skills Section */
+.skills__container {
+    padding: 5rem 2rem;
+    background: linear-gradient(to right, rgb(255, 255, 255), rgb(254, 215, 173));
+    color: #000000;
+}
+
+.skills__content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.skills__content .section__header {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: rgb(109, 67, 0);
+}
+
+.skills__content .section__description {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 3rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.skills__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+.skills__column {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.skills__column:hover {
+    transform: translateY(-5px);
+}
+
+.skills__column h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: rgb(109, 67, 0);
+    text-align: center;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.skills__column h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background-color: rgb(109, 67, 0);
+}
+
+.skills__list {
+    list-style: none;
+}
+
+.skills__list li {
+    padding: 0.8rem 0;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgba(109, 67, 0, 0.1);
+}
+
+.skills__list li:last-child {
+    border-bottom: none;
+}
+
+.skills__list i {
+    color: rgb(109, 67, 0);
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+/* Responsive Design for Skills */
+@media (max-width: 768px) {
+    .skills__grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .skills__column {
+        padding: 1.5rem;
+    }
+    
+    .skills__list li {
+        font-size: 1rem;
+    }
+}
+
+#works {
+    background: linear-gradient(to right, rgb(255, 255, 255), rgb(254, 215, 173));
+    color: #000000; /* Default text color for the section */
+}
+
+.works__container .section__header::before {
+    content: "My Works";
+}
+
+.works__grid {
+    margin-top: 4rem;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.works__card {
+    background-color: #ffffff; /* Set card background to white */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.works__card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.works__card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+.works__content {
+    padding: 1rem;
+    background-color: #ffffff; /* Ensure the content background matches the card */
+    color: #000000; /* Set text color to black */
+}
+
+.works__content h4 {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #000000; /* Black text for headings */
+}
+
+.works__content .section__description {
+    margin-bottom: 2rem;
+    color: #000000; /* Black text for descriptions */
+}
+
+.works__content > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.works__content a {
+    color: #000000; /* Set links to black by default */
+    transition: color 0.3s;
+}
+
+.works__content a:hover {
+    color: var(--primary-color); /* Optionally change link color on hover */
+}
+
+.works__socials {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.works__socials a i {
+    color: #000000; /* Black color for social icons */
+}
+
+
+#contact {
+    background: linear-gradient(to right, rgb(255, 255, 255), rgb(254, 215, 173));
+    color: #000000;
+    text-align: center;
+    padding: 3rem 1rem;
+    min-height: auto; /* Remove full viewport height requirement */
+}
+
+.footer {
+    padding: 2rem 1rem; /* Reduced padding */
+}
+
+.footer__container .section__header {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 0; /* Removed bottom margin */
+}
+
+.footer__form {
+    display: flex;
+    justify-content: center; /* Center the form horizontally */
+}
+
+.footer__form form {
+    max-width: 600px; /* Limit form width for better readability */
+    width: 100%;
+    display: grid;
+    gap: 1.5rem;
+}
+
+.input__row {
+    display: flex;
+    gap: 1rem;
+}
+
+.footer__form input,
+.footer__form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    outline: none;
+    color: #333333;
+}
+
+.footer__form textarea {
+    resize: none;
+    height: 150px;
+}
+
+.footer__form .btn {
+    background-color: rgb(109, 67, 0);
+    color: #ffffff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.footer__form .btn:hover {
+    background-color: #ffffff;
+    color: rgb(109, 67, 0);
+    border: 2px solid rgb(109, 67, 0);
+}
+
+.main-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.main-container .image {
+    z-index: -1;
+    width: 50%;
+}
+.main-container .image img {
+    width: 100%;
+}
+.main-container .content {
+    color: black;
+    width: 40%;
+    min-height: 100px;
+}
+.content h1 {
+    font-size: clamp(1rem, 2rem + 5vw, 3rem);
+}
+.content h1 span {
+    color: rgb(109,67, 0);
+    text-shadow: 0 0 10px rgb(109,67, 0);
+}
+.content .typewriter {
+    font-weight: 600;
+    font-size: clamp(1rem, 1rem + 5vw, 2rem);
+}
+.content .typewriter span {
+    color: rgb(109,67, 0);
+    font-size: 2.5rem;
+    text-shadow: 0 0 5px rgb(109,67, 0);
+    position: relative;
+    transition: 0.3s linear;
+}
+.typewriter span::before {
+    content: "UX/UI Designer";
+    animation: words 8s infinite; /* Increased from 10s to 20s to accommodate more items */
+}
+.typewriter span::after {
+    content: "";
+    position: absolute;
+    width: calc(100% + 8px);
+    height: 100%;
+    border-left: 3px solid black;
+    animation: cursor 0.6s linear infinite;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 3rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start; /* Changed from center to flex-start */
+    gap: 1.5rem;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(109, 67, 0, 0.1);
+}
+
+.contact-icon {
+    width: 60px;
+    height: 60px;
+    background: rgba(109, 67, 0, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 4px; /* Added to align icon with first line of text */
+}
+
+.contact-details {
+    text-align: left; /* Ensure text alignment is left */
+    width: 100%; /* Take full available width */
+}
+
+.contact-details h4 {
+    color: rgb(109, 67, 0);
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    text-align: left; /* Explicit left alignment */
+}
+
+.contact-details a {
+    color: #333;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+    word-break: break-all;
+}
+
+.contact-details a:hover {
+    color: rgb(109, 67, 0);
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-item {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.2rem;
+    }
+    
+    .contact-icon {
+        margin-bottom: 1rem;
+    }
+    
+    .contact-details h4 {
+        margin-bottom: 0.3rem;
+    }
+}
+
+@keyframes cursor {
+    to {
+        border-left: 3px solid #b74b4b;
+    }
+}
+@keyframes words {
+    0%, 20% {
+        content: "UI/UX Designer";
+    }
+    21%, 40% {
+        content: "Photographer";
+    }
+    41%, 60% {
+        content: "Full-Stack Developer";
+    }
+}
+.content p {
+    font-size: clamp(0.4rem, 0.2rem + 9vw, 1rem);
+    margin: 10px 0;
+}
+.social-links i {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    height: 3rem;
+    background-color: transparent;
+    border: 0.2rem solid rgb(109,67, 0);
+    border-radius: 50%;
+    color: rgb(109,67, 0);
+    margin: 5px 10px;
+    font-size: 1.5rem;
+    transition: 0.2s linear;
+}
+.social-links i:hover {
+    scale: 1.3;
+    color: white;
+    background-color: rgb(109,67, 0);
+    filter: drop-shadow(0 0 10px rgb(109,67,0));
+}
+.content button {
+    width: 40%;
+    height: 6vh;
+    margin: 30px;
+    background-color: rgb(109,67, 0);
+    color: white;
+    border: none;
+    outline: none;
+    font-size: 100%;
+    font-weight: 700;
+    border-radius: 5px;
+    transition: 0.2s linear;
+}
+.content button:hover {
+    scale: 1.1;
+    color: rgb(109,67, 0);
+    border: 2px solid rgb(109,67, 0);
+    background-color: transparent;
+    font-weight: 700;
+    box-shadow: 0 0 40px rgb(109,67, 0);
+}
+
+/* Popup Modal Styles */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.popup-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.popup-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.popup-content img {
+    max-width: 100%;
+    max-height: 80vh;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.close-popup {
+    position: absolute;
+    top: -40px;
+    right: -10px;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    background: none;
+    border: none;
+    transition: transform 0.3s ease;
+}
+
+.close-popup:hover {
+    transform: rotate(90deg);
+}
+@media (max-width: 884px) {  
+    body {  
+        overflow-y: visible;  
+    }  
+    nav .logo {  
+        position: absolute;  
+        top: 16px;  
+        left: 15px;  
+        font-size: 1.5rem;  
+    }  
+    .main-container {  
+        display: flex;  
+        flex-direction: column;  
+        align-items: center;  
+        text-align: center;  
+    }  
+    .nav-container .links {  
+        display: none;  
+    }  
+    .hamburg, .cancel {  
+        display: block;  
+    }  
+    .main-container .content {  
+        width: 90%;  
+    }  
+    .social-links {  
+        margin-top: 15px;  
+        display: flex;  
+        justify-content: center;  
+        gap: 15px;  
+        visibility: visible;
+    }  
+    .social-links a {  
+        text-decoration: none;  
+    }  
+    .social-links i {  
+        display: inline-flex;  
+        justify-content: center;  
+        align-items: center;  
+        width: 3rem;  
+        height: 3rem;  
+        font-size: 1.5rem;  
+        background-color: transparent;  
+        border: 0.2rem solid rgb(109, 67, 0);  
+        border-radius: 50%;  
+        color: rgb(109, 67, 0);  
+        transition: 0.3s ease-in-out;  
+    }  
+    .social-links i:hover {  
+        transform: scale(1.2);  
+        color: white;  
+        background-color: rgb(109, 67, 0);  
+    }  
+    .main-container .image {  
+        width: 90%;  
+        margin-bottom: 20px;  
+    }  
+    .content button {  
+        width: 70%;  
+    }  
+    .content .btn {
+        display: contents; 
+        margin: 20px 0;     
+        width: 100%;        
+        text-align: center; 
+        visibility: visible; 
+        z-index: 10;       
+    }
+    .content .typewriter {
+        font-size: 1.5rem; /* Adjust as needed */
+    }
+}
