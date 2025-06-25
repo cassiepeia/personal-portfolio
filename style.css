@@ -128,7 +128,7 @@ nav {
     height: auto;
     background-color: #ffffff; /* Solid background for dropdown */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: 0.3s ease-in-out;
+  transition: transform 0.3s ease, visibility 0.3s ease;
 }
 
 .dropdown .links a {

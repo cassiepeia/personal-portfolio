@@ -63,6 +63,116 @@
         .works__card {
             cursor: pointer;
         }
+
+        /* === Certifications & E-badges Carousel === */
+.certs__container {
+  background: linear-gradient(to right, #fff, #fed7ad);
+  padding: 5rem 2rem;
+  text-align: center;
+  color: #000;
+}
+
+.certs__carousel {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 3rem;
+  margin-top: 3rem;
+}
+
+.certs__column {
+  flex: 1;
+  min-width: 300px;
+  max-width: 450px;
+  text-align: left;
+}
+
+.certs__column h3 {
+  color: rgb(109, 67, 0);
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.certs__slider {
+  position: relative;
+  overflow: hidden;
+  height: 200px;
+}
+
+.certs__item {
+  background: #fff;
+  padding: 1.5rem;
+  border: 2px solid rgb(109, 67, 0);
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 100%;
+  opacity: 0;
+  z-index: 0;
+}
+
+.certs__item.active {
+  left: 0;
+  opacity: 1;
+  z-index: 1;
+}
+
+.certs__item h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.certs__item a {
+  display: inline-block;
+  margin-top: 1rem;
+  background-color: rgb(109, 67, 0);
+  color: white;
+  padding: 0.5rem 1.2rem;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.certs__item a:hover {
+  background-color: #452f00;
+}
+
+.certs__nav {
+  margin-top: 1.2rem;
+  text-align: center;
+}
+
+.certs__nav button {
+  background: none;
+  border: 2px solid rgb(109, 67, 0);
+  padding: 0.4rem 1rem;
+  margin: 0 0.5rem;
+  cursor: pointer;
+  color: rgb(109, 67, 0);
+  border-radius: 20px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.certs__nav button:hover {
+  background: rgb(109, 67, 0);
+  color: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .certs__carousel {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+
+
+        
     </style>
 </head>
 <body>
@@ -77,7 +187,7 @@
                 <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"><a href="#skills">Skills</a></div>
                 <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400"><a href="#works">My Works</a></div>
                 <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500"><a href="#capstone">Capstone</a></div>
-                <!-- <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600"><a href="#certificates">Certificates</a></div> -->
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600"><a href="#certificates">Certificates</a></div>
                 <div class="link contact-btn" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="700"><a href="#contact">Contact</a></div>
             </div>
             <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
@@ -89,7 +199,7 @@
                 <a href="#skills">Skills</a>
                 <a href="#works">My Works</a>
                 <a href="#capstone">Capstone Project</a>
-                <!-- <a href="#certificates">Certificates</a> -->
+                <a href="#certificates">Certificates</a>
                 <a href="#contact">Contact</a>
                 <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
             </div>
@@ -280,7 +390,7 @@
     </div>
 </section>
 
-<!-- Capstone Project Section -->
+<<!-- Capstone Project Section -->
 <section class="section__container capstone__container" id="capstone">
     <h2 class="section__header" data-aos="fade-up" data-aos-duration="1000">Capstone Project</h2>
     <p class="section__description" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
@@ -290,7 +400,7 @@
     <div class="video-container" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="200">
         <video width="800" height="450" controls>
             <source src="0623.mp4" type="video/mp4">
-            Your browser does not support the video tag.
+            
         </video>
     </div>
     
@@ -304,7 +414,61 @@
     </div> -->
 </section>
 
-    
+
+<!-- Certifications & E-badges Section -->
+<section class="section__container certs__container" id="certifications">
+  <h2 class="section__header" data-aos="fade-up" data-aos-duration="1000">Certifications & E-badges</h2>
+  <p class="section__description" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+    Verified certificates and digital badges showcasing my professional development and achievements.
+  </p>
+
+  <div class="certs__carousel">
+    <!-- Left: Certifications -->
+    <div class="certs__column">
+      <h3>Certificates</h3>
+      <div class="certs__slider" id="certSlider">
+        <div class="certs__item">
+          <h4>HTML</h4>
+          <p>Sololearn</p>
+          <a href="https://www.sololearn.com/certificates/CT-JYSG6GQH" target="_blank">View Certificate</a>
+        </div>
+        <div class="certs__item">
+          <h4>SQL Intermediate</h4>
+          <p>Sololearn</p>
+          <a href="https://www.sololearn.com/certificates/CC-A4SFMW7B" target="_blank">View Certificate</a>
+        </div>
+        <!-- Add more .certs__item here -->
+      </div>
+      <div class="certs__nav">
+        <button onclick="prevSlide('certSlider')">Previous</button>
+        <button onclick="nextSlide('certSlider')">Next</button>
+      </div>
+    </div>
+
+    <!-- Right: E-Badges -->
+    <div class="certs__column">
+      <h3>E-badges</h3>
+      <div class="certs__slider" id="badgeSlider">
+        <div class="certs__item">
+          <h4>Python for Data Science</h4>
+          <p>IBM Badge</p>
+          <a href="https://your-link.com/ebadge1" target="_blank">View Badge</a>
+        </div>
+        <div class="certs__item">
+          <h4>Google UX Design</h4>
+          <p>Google</p>
+          <a href="https://your-link.com/ebadge2" target="_blank">View Badge</a>
+        </div>
+        <!-- Add more .certs__item here -->
+      </div>
+      <div class="certs__nav">
+        <button onclick="prevSlide('badgeSlider')">Previous</button>
+        <button onclick="nextSlide('badgeSlider')">Next</button>
+      </div>
+    </div>
+  </div>
+</section>
+
     <footer class="footer" id="contact">
     <div class="section__container footer__container">
         <h2 class="section__header">Contact Me</h2>
@@ -357,6 +521,266 @@
             duration: 1000, // Animation duration
             once: false, // Allow animations to reset and repeat as user scrolls
         });
+
+        // Certification and Badge Sliders
+function nextSlide(id) {
+  const container = document.getElementById(id);
+  const items = container.querySelectorAll(".certs__item");
+  let activeIndex = Array.from(items).findIndex(item => item.classList.contains("active"));
+
+  items[activeIndex].classList.remove("active");
+  activeIndex = (activeIndex + 1) % items.length;
+  items[activeIndex].classList.add("active");
+}
+
+function prevSlide(id) {
+  const container = document.getElementById(id);
+  const items = container.querySelectorAll(".certs__item");
+  let activeIndex = Array.from(items).findIndex(item => item.classList.contains("active"));
+
+  items[activeIndex].classList.remove("active");
+  activeIndex = (activeIndex - 1 + items.length) % items.length;
+  items[activeIndex].classList.add("active");
+}
+
+// Initialize first visible slide
+document.addEventListener("DOMContentLoaded", function () {
+  const sliders = document.querySelectorAll(".certs__slider");
+  sliders.forEach(slider => {
+    const first = slider.querySelector(".certs__item");
+    if (first) first.classList.add("active");
+  });
+});
+
+
+// Update your existing script or add this to it
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Initialize certification sliders
+    initSliders();
+    
+    // Make sure the Certificates link scrolls to the right section
+    document.querySelectorAll('a[href="#certificates"]').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector('#certifications').scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+});
+
+function initSliders() {
+    // Initialize both sliders
+    const sliders = {
+        certSlider: [
+            {
+                title: "Salesforce Supported Virtual Internship 2025 - Philippines",
+                issuer: "Smartbridge",
+                link: "https://drive.google.com/file/d/1iJeSbxdDAN4P55g38HxMan6xNNidkhwd/view"
+            },
+            {
+                title: "CCNA: Introduction to Networks",
+                issuer: "Cisco Networking Academy",
+                link: "https://www.netacad.com/certificates?issuanceId=7a7e3c3a-7b98-4a3b-af36-23167b10e888"
+            },
+            {
+                title: "Intrioduction to Cybersecurity",
+                issuer: "Cisco Networking Academy",
+                link: "https://www.netacad.com/certificates?issuanceId=023a8b75-d116-4bc1-9588-45ed590b4226"
+            },
+            {
+                title: "Cyber Threat Management",
+                issuer: "Cisco Networking Academy",
+                link: "https://www.netacad.com/certificates?issuanceId=d3662109-e96d-42ee-bd6f-20763fa2e70f"
+            },
+            {
+                title: "AWS Academy Cloud Architecting",
+                issuer: "AWS Academy",
+                link: "https://drive.google.com/file/d/1n95hU4hqIWGCC7OBGSdcssREgwHlfUZb/view"
+            },
+            {
+                title: "AWS Academy Cloud Developing",
+                issuer: "AWS Academy",
+                link: "https://drive.google.com/file/d/1w4sluWw2tMZODXxnfAMYgHi5ha3o0u9C/view"
+            },
+            {
+                title: "AWS Academy Cloud Foundations",
+                issuer: "AWS Academy",
+                link: "https://drive.google.com/file/d/13fNv7G2SBOU5_sBBQc_GFmFnNkqFDZZJ/view"
+            },
+            {
+                title: "AWS Academy Cloud Operations",
+                issuer: "AWS Academy",
+                link: "https://drive.google.com/file/d/1c2hTTsZIEfsUnsaZ_nrwxlEyRVwaTEjJ/view"
+            },
+            {
+                title: "HTML",
+                issuer: "Sololearn",
+                link: "https://www.sololearn.com/certificates/CT-JYSG6GQH"
+            },
+            {
+                title: "SQL Intermediate",
+                issuer: "Sololearn",
+                link: "https://www.sololearn.com/certificates/CC-A4SFMW7B"
+            },
+
+            {
+                title: "Introduction to SQL",
+                issuer: "Sololearn",
+                link: "https://www.sololearn.com/certificates/CC-ICLEHCDP"
+            },
+            {
+                title: "PHP",
+                issuer: "Sololearn",
+                link: "https://www.sololearn.com/certificates/CT-ZDJBLBGG"
+            },
+            {
+                title: "Introduction to JavaScript",
+                issuer: "Sololearn",
+                link: "https://www.sololearn.com/certificates/CC-RW7HGR3Q"
+            },
+            {
+                title: "CSS",
+                issuer: "Sololearn",
+                link: "https://www.sololearn.com/certificates/CT-4UFGXPZK"
+            },
+            {
+                title: "Design Craft: Mastering UI/UX Fundamentals",
+                issuer: "University of Nueva Caceres",
+                link: "https://drive.google.com/file/d/15-cHTZkY82yG-DFa6KBquHTz29fKj_y-/view"
+            },
+            {
+                title: "The Hour of Code",
+                issuer: "Code.org",
+                link: "https://drive.google.com/file/d/1xfsz_RB6IMFySHkn3JQRlub2aXkpwhi_/view"
+            },
+            {
+                title: "Business Analysis Foundations: Business Process Modeling",
+                issuer: "LinkeIdIn Learning",
+                link: "https://drive.google.com/file/d/1IdfSfQFMRNNcpkycNY9vK0tybXCEAT9_/view"
+            },
+            {
+                title: "Ethics in the Age of Generative AI",
+                issuer: "LinkeIdIn Learning",
+                link: "https://drive.google.com/file/d/1S9Q4hoeu_pvnh57o8s23HcCgny_ZDJwG/view"
+            },
+            {
+                title: "Generative AI: The Evolution of Thoughtful Online Search",
+                issuer: "LinkeIdIn Learning",
+                link: "https://drive.google.com/file/d/1Pnlcs3wLZ2N5-gAR92bQlRGWxfAZRzCl/view"
+            },
+            {
+                title: "Introduction to Artoficial Intelligence",
+                issuer: "LinkeIdIn Learning",
+                link: "https://drive.google.com/file/d/1E5OalSML1qygo59JhejJqkHZAsdGFsFC/view"
+            },
+            {
+                title: "Learning Microsoft 365 Copilot Work",
+                issuer: "LinkeIdIn Learning",
+                link: "https://drive.google.com/file/d/164FcQpsrDOST83okcMle4KSBTyfNFLVO/view"
+            },
+            {
+                title: "Requirement Elicitation and Analysis",
+                issuer: "LinkeIdIn Learning",
+                link: "https://drive.google.com/file/d/1kgmZ7HAItRCofjkwysQ_O-Wi-CAA1Eny/view"
+            },
+            {
+                title: "Streamlining Your Work with Microsoft 365 Copilot (Nov 2024)",
+                issuer: "LinkeIdIn Learning",
+                link: "https://drive.google.com/file/d/1UqhQnqTy8GJXhGyTifQAg7oRgipY69Jb/view"
+            },
+            {
+                title: "What is Generative AI?",
+                issuer: "LinkeIdIn Learning",
+                link: "https://drive.google.com/file/d/11GZahl-KDGNn9BEsAHm04GIqYjDM8QLY/view"
+            },
+            // Add more certificates here
+        ],
+        badgeSlider: [
+            {
+                title: "CCNA: Introduction to Networks",
+                issuer: "Cisco Networking Academy",
+                link: "https://www.credly.com/earner/earned/badge/35606510-8d28-49bd-a7e8-6924b26a290d"
+            },
+            {
+                title: "Introduction to Cybersecurity",
+                issuer: "Cisco Networking Academy",
+                link: "https://www.credly.com/earner/earned/badge/fd3f17dd-5555-4c8b-ad41-5d0445a91022"
+            },
+            {
+                title: "Cyber Threat Management",
+                issuer: "Cisco Networking Academy",
+                link: "https://www.credly.com/earner/earned/badge/1e1e857a-9797-4ddf-b4b6-48712d7d611d"
+            },
+            {
+                title: "AWS Academy Cloud Architecting",
+                issuer: "AWS Academy",
+                link: "https://www.credly.com/earner/earned/badge/60f194a4-fb35-4ca5-9b5b-af93877ad46e"
+            },
+            {
+                title: "AWS Academy Cloud Foundations",
+                issuer: "AWS Academy",
+                link: "https://www.credly.com/earner/earned/badge/05921d11-139c-49bb-be03-7864dee427e9"
+            },
+            {
+                title: "AWS Academy Cloud Operations",
+                issuer: "AWS Academy",
+                link: "https://www.credly.com/earner/earned/badge/7552ebdc-0f9f-4dfa-891c-a7f65ee1b960"
+            },
+            {
+                title: "AWS Academy Cloud Developing",
+                issuer: "AWS Academy",
+                link: "https://www.credly.com/earner/earned/badge/9e4b752d-9dc8-4ea0-abce-0639cee9e8f6"
+            },
+            {
+                title: "Salesforce Badges",
+                issuer: "Trailhead by Salesforce",
+                link: "https://www.salesforce.com/trailblazer/kq04yoj2ms15wn8w2n"
+            },
+            
+            // Add more badges here
+        ]
+    };
+
+    // Populate the sliders
+    for (const [sliderId, items] of Object.entries(sliders)) {
+        const container = document.getElementById(sliderId);
+        container.innerHTML = ''; // Clear existing items
+        
+        items.forEach((item, index) => {
+            const slide = document.createElement('div');
+            slide.className = `certs__item ${index === 0 ? 'active' : ''}`;
+            slide.innerHTML = `
+                <h4>${item.title}</h4>
+                <p>${item.issuer}</p>
+                <a href="${item.link}" target="_blank">View ${sliderId === 'certSlider' ? 'Certificate' : 'Badge'}</a>
+            `;
+            container.appendChild(slide);
+        });
+    }
+}
+
+// Your existing nextSlide and prevSlide functions remain the same
+function nextSlide(id) {
+    const container = document.getElementById(id);
+    const items = container.querySelectorAll(".certs__item");
+    let activeIndex = Array.from(items).findIndex(item => item.classList.contains("active"));
+
+    items[activeIndex].classList.remove("active");
+    activeIndex = (activeIndex + 1) % items.length;
+    items[activeIndex].classList.add("active");
+}
+
+function prevSlide(id) {
+    const container = document.getElementById(id);
+    const items = container.querySelectorAll(".certs__item");
+    let activeIndex = Array.from(items).findIndex(item => item.classList.contains("active"));
+
+    items[activeIndex].classList.remove("active");
+    activeIndex = (activeIndex - 1 + items.length) % items.length;
+    items[activeIndex].classList.add("active");
+}
 
         function hamburg() {
             const navbar = document.querySelector(".dropdown");
