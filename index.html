@@ -170,7 +170,230 @@
   }
 }
 
+/* Awards Section */
+.awards__container {
+  background: linear-gradient(to right, #fff, #fed7ad);
+  padding: 5rem 2rem;
+  text-align: center;
+  color: #000;
+}
 
+.awards__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.award__card {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  border: 2px solid rgba(109, 67, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.award__card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.award__icon {
+  font-size: 3rem;
+  color: rgb(109, 67, 0);
+  margin-bottom: 1.5rem;
+}
+
+.award__title {
+  color: rgb(109, 67, 0);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.award__title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 3px;
+  background-color: rgb(109, 67, 0);
+}
+
+.award__description {
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.award__date {
+  font-style: italic;
+  color: #666;
+  margin-bottom: 1.5rem;
+}
+
+.award__button {
+  display: inline-block;
+  padding: 0.6rem 1.5rem;
+  background-color: rgb(109, 67, 0);
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  margin-top: auto;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.award__button:hover {
+  background-color: rgba(109, 67, 0, 0.8);
+  transform: translateY(-2px);
+}
+
+.award__button i {
+  margin-left: 5px;
+  font-size: 0.8rem;
+}
+
+/* Certificate Modal */
+.cert-modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  overflow: auto;
+}
+
+.cert-modal-content {
+  position: relative;
+  margin: auto;
+  padding: 20px;
+  width: 90%;
+  max-width: 800px;
+  margin-top: 50px;
+}
+
+.cert-modal-close {
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  color: white;
+  font-size: 35px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.cert-modal-close:hover {
+  color: #fed7ad;
+}
+
+.cert-slides {
+  display: flex;
+  overflow: hidden;
+  position: relative;
+}
+
+.cert-slide {
+  display: none;
+  width: 100%;
+  text-align: center;
+}
+
+.cert-slide.active {
+  display: block;
+}
+
+.cert-image {
+  max-width: 100%;
+  max-height: 70vh;
+  object-fit: contain;
+}
+
+.cert-prev, .cert-next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.3s;
+  user-select: none;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 0 3px 3px 0;
+}
+
+.cert-next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.cert-prev:hover, .cert-next:hover {
+  background-color: rgba(109, 67, 0, 0.8);
+}
+
+.cert-dots {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.cert-dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.cert-dot.active, .cert-dot:hover {
+  background-color: rgb(109, 67, 0);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .awards__grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .award__card {
+    padding: 1.5rem;
+  }
+  
+  .cert-modal-content {
+    width: 95%;
+    margin-top: 30px;
+  }
+  
+  .cert-prev, .cert-next {
+    padding: 10px;
+    font-size: 18px;
+  }
+  
+  .cert-dot {
+    height: 12px;
+    width: 12px;
+  }
+}
 
         
     </style>
@@ -468,6 +691,87 @@
     </div>
   </div>
 </section>
+
+
+<!-- Awards Section -->
+<section class="section__container awards__container" id="awards">
+    <h2 class="section__header" data-aos="fade-up" data-aos-duration="1000">Awards & Honors</h2>
+    <p class="section__description" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+        Recognition of my academic excellence and innovative contributions.
+    </p>
+    
+    <div class="awards__grid">
+        <!-- Innowave Award -->
+        <div class="award__card" data-aos="fade-up" data-aos-duration="1000">
+            <div class="award__icon">
+                <i class="fas fa-trophy"></i>
+            </div>
+            <h3 class="award__title">Innowave Award 2025</h3>
+            <p class="award__description">
+                Recognized for outstanding innovation and excellence in the School of Computer and Information Sciences (SCIS) at the University of Nueva Caceres.
+            </p>
+            <p class="award__date">Awarded: June 21, 2025</p>
+            <button class="award__button view-cert-btn" data-award="innowave">View Cert <i class="fas fa-external-link-alt"></i></button>
+        </div>
+        
+        <!-- Dean's Lister -->
+        <div class="award__card" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+            <div class="award__icon">
+                <i class="fas fa-medal"></i>
+            </div>
+            <h3 class="award__title">Dean's Lister</h3>
+            <p class="award__description">
+                Achieved Dean's List recognition with a Grade Weighted Average (GWA) of 1.36, placing me among the top students in my program.
+            </p>
+            <p class="award__date">Academic Year 2024-2025</p>
+            <button class="award__button view-cert-btn" data-award="deanslister">View Cert <i class="fas fa-external-link-alt"></i></button>
+        </div>
+    </div>
+</section>
+
+<!-- Certificate Modals -->
+<!-- Innowave Award Modal -->
+<div class="cert-modal" id="innowaveModal">
+    <div class="cert-modal-content">
+        <span class="cert-modal-close">&times;</span>
+        <div class="cert-slides">
+            <div class="cert-slide">
+                <img src="509359335_744243007948324_6864404164979892015_n.jpg" class="cert-image">
+            </div>
+            <div class="cert-slide">
+                <img src="510408804_744270554612236_6737244049831007549_n.jpg" class="cert-image">
+            </div>
+        </div>
+        <a class="cert-prev">&#10094;</a>
+        <a class="cert-next">&#10095;</a>
+        <div class="cert-dots">
+            <span class="cert-dot active"></span>
+            <span class="cert-dot"></span>
+        </div>
+    </div>
+</div>
+
+<!-- Dean's Lister Modal -->
+<div class="cert-modal" id="deanslisterModal">
+    <div class="cert-modal-content">
+        <span class="cert-modal-close">&times;</span>
+        <div class="cert-slides">
+            <div class="cert-slide">
+                <img src="innowave.jpg" class="cert-image">
+            </div>
+            <div class="cert-slide">
+                <img src="IMG_20250621_234810.jpg" class="cert-image">
+            </div>
+        </div>
+        <a class="cert-prev">&#10094;</a>
+        <a class="cert-next">&#10095;</a>
+        <div class="cert-dots">
+            <span class="cert-dot active"></span>
+            <span class="cert-dot"></span>
+        </div>
+    </div>
+</div>
+
 
     <footer class="footer" id="contact">
     <div class="section__container footer__container">
@@ -858,6 +1162,115 @@ function prevSlide(id) {
                 }
             });
         });
-    </script>
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize all modals
+    const modals = {
+        innowave: document.getElementById('innowaveModal'),
+        deanslister: document.getElementById('deanslisterModal')
+    };
+    
+    const viewCertBtns = document.querySelectorAll('.view-cert-btn');
+    
+    // Open modal when View Cert button is clicked
+    viewCertBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const awardType = this.getAttribute('data-award');
+            const modal = modals[awardType];
+            
+            // Initialize carousel for this modal
+            initCarousel(modal);
+            
+            // Show the modal
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        });
+    });
+    
+    // Close modal when X is clicked
+    document.querySelectorAll('.cert-modal-close').forEach(closeBtn => {
+        closeBtn.addEventListener('click', function() {
+            const modal = this.closest('.cert-modal');
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        });
+    });
+    
+    // Close modal when clicking outside the content
+    document.querySelectorAll('.cert-modal').forEach(modal => {
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+    });
+    
+    // Carousel initialization function
+    function initCarousel(modal) {
+        const slides = modal.querySelectorAll('.cert-slide');
+        const dots = modal.querySelectorAll('.cert-dot');
+        const prevBtn = modal.querySelector('.cert-prev');
+        const nextBtn = modal.querySelector('.cert-next');
+        
+        let currentSlide = 0;
+        
+        function showSlide(n) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            slides[n].classList.add('active');
+            dots[n].classList.add('active');
+            currentSlide = n;
+        }
+        
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+        
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+        }
+        
+        // Event listeners for navigation
+        nextBtn.addEventListener('click', nextSlide);
+        prevBtn.addEventListener('click', prevSlide);
+        
+        // Dot navigation
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                showSlide(index);
+            });
+        });
+        
+        // Show first slide initially
+        showSlide(0);
+        
+        // Keyboard navigation
+        modal.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowRight') {
+                nextSlide();
+            } else if (e.key === 'ArrowLeft') {
+                prevSlide();
+            }
+        });
+    }
+    
+    // Global keyboard navigation for escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            document.querySelectorAll('.cert-modal').forEach(modal => {
+                if (modal.style.display === 'block') {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        }
+    });
+});
+</script>
 </body>
 </html>
