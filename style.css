@@ -10,17 +10,17 @@ html {
 }
 
 body {
-    height: 100%; /* Ensure the full height of the page is used */
-    overflow-x: hidden; /* Prevent horizontal scrolling */
-    overflow-y: auto; /* Allow vertical scrolling */
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
     background: linear-gradient(to right, rgb(255,255,255), rgb(254,215,173));
 }
 
 section {
-    min-height: 100vh; /* Ensure each section spans at least the viewport height */
+    min-height: 100vh;
     padding: 5rem 1rem;
     text-align: center;
-    box-sizing: border-box; /* Include padding in height calculations */
+    box-sizing: border-box;
 }
 
 nav {
@@ -29,8 +29,8 @@ nav {
     position: sticky;
     top: 0;
     z-index: 100;
-    background-color: #ffffff; /* Solid background color for the navigation bar */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for better visibility */
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     background: linear-gradient(to right, rgb(255, 255, 255), rgb(254, 215, 173));
 }
 
@@ -49,8 +49,8 @@ nav {
 }
 
 .logo span {
-    color: rgb(109, 67, 0); /* Brown color for "Cassie" */
-    text-shadow: none; /* Remove transparency or glowing effect */
+    color: rgb(109, 67, 0);
+    text-shadow: none;
 }
 
 .nav-container .links {
@@ -62,14 +62,14 @@ nav {
 .nav-container .links a {
     position: relative;
     font-size: 1.2rem;
-    color: black; /* Solid black text */
+    color: black;
     text-decoration: none;
     font-weight: 500;
     transition: 0.3s;
 }
 
 .nav-container .links a:hover {
-    color: rgb(109, 67, 0); /* Change color on hover */
+    color: rgb(109, 67, 0);
 }
 
 .nav-container .links a::before {
@@ -79,24 +79,24 @@ nav {
     left: 0;
     width: 0%;
     height: 2px;
-    background-color: rgb(109, 67, 0); /* Brown underline effect */
+    background-color: rgb(109, 67, 0);
     transition: width 0.3s ease-in-out;
 }
 
 .nav-container .links a:hover::before {
-    width: 100%; /* Expand underline on hover */
+    width: 100%;
 }
 
 .nav-container .contact-btn {
-    background-color: rgb(109, 67, 0); /* Brown background for the button */
+    background-color: rgb(109, 67, 0);
     padding: 5px 20px;
     border-radius: 20px;
-    border: 2px solid rgb(109, 67, 0); /* Brown border */
+    border: 2px solid rgb(109, 67, 0);
     transition: 0.3s;
 }
 
 .nav-container .contact-btn a {
-    color: white; /* White text for the button */
+    color: white;
 }
 
 .nav-container .contact-btn:hover {
@@ -104,7 +104,7 @@ nav {
 }
 
 .nav-container .contact-btn:hover a {
-    color: rgb(109, 67, 0); /* Text turns brown on hover */
+    color: rgb(109, 67, 0);
 }
 
 .hamburg, .cancel {
@@ -114,7 +114,7 @@ nav {
     top: 10px;
     color: black;
     font-size: 2rem;
-    display: none; /* Only visible in mobile view */
+    display: none;
 }
 
 .dropdown {
@@ -124,13 +124,13 @@ nav {
     transform: translateY(-500px);
     width: 100%;
     height: auto;
-    background-color: #ffffff; /* Solid background for dropdown */
+    background-color: #ffffff;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, visibility 0.3s ease;
 }
 
 .dropdown .links a {
-    color: black; /* Solid black text for dropdown links */
+    color: black;
     display: flex;
     text-decoration: none;
     justify-content: center;
@@ -139,14 +139,14 @@ nav {
 }
 
 .dropdown .links a:hover {
-    background-color: rgb(109, 67, 0); /* Highlight background on hover */
+    background-color: rgb(109, 67, 0);
     color: white;
 }
 
-/* Home Section */
+/* Home Section - Modified */
 .home-section {
-    padding-top: 10vh; /* Adjust for sticky nav */
-    min-height: 90vh; /* Ensure content is visible below nav */
+    padding-top: 5vh; /* Reduced from 10vh */
+    min-height: 95vh; /* Adjusted to maintain full height */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -157,46 +157,47 @@ nav {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+    flex-wrap: wrap;
     padding: 2rem 1rem;
 }
 
 .main-container .image {
     z-index: -1;
-    width: 50%; /* Adjusted from 45% to 50% to make it bigger */
-    max-width: 1300px; /* Max width for image */
-    margin-bottom: 2rem; /* Add space below image on small screens */
+    width: 50%;
+    max-width: 1300px;
+    margin-bottom: 2rem;
 }
 .main-container .image img {
     width: 100%;
     height: auto;
-    display: block; /* Remove extra space below image */
-    animation: float 3s ease-in-out infinite; /* Apply floating animation */
+    display: block;
+    animation: float 3s ease-in-out infinite;
 }
 
 .main-container .content {
     color: black;
-    width: 50%; /* Adjust width for content */
-    max-width: 600px; /* Max width for content */
+    width: 50%;
+    max-width: 600px;
     min-height: 100px;
-    text-align: left; /* Align text left for readability */
+    text-align: center; /* Changed from left to center */
+    margin-top: -2rem; /* Added to move content up */
 }
 .content h1 {
-    font-size: clamp(2rem, 5vw + 1rem, 3.5rem); /* Responsive font size */
+    font-size: clamp(1.8rem, 4vw + 1rem, 3rem);
     margin-bottom: 0.5rem;
 }
 .content h1 span {
     color: rgb(109,67, 0);
-    text-shadow: 0 0 10px rgba(109,67, 0, 0.5); /* Subtle shadow */
+    text-shadow: 0 0 10px rgba(109,67, 0, 0.5);
 }
 .content .typewriter {
     font-weight: 600;
-    font-size: clamp(1.5rem, 3vw + 1rem, 2.5rem); /* Responsive font size */
+    font-size: clamp(1.2rem, 2.5vw + 1rem, 2rem);
     margin-bottom: 1rem;
 }
 .content .typewriter span {
     color: rgb(109,67, 0);
-    text-shadow: 0 0 5px rgba(109,67, 0, 0.5); /* Subtle shadow */
+    text-shadow: 0 0 5px rgba(109,67, 0, 0.5);
     position: relative;
     transition: 0.3s linear;
 }
@@ -230,16 +231,20 @@ nav {
     }
 }
 .content p {
-    font-size: clamp(0.9rem, 1vw + 0.5rem, 1.1rem); /* Responsive font size */
+    font-size: clamp(0.8rem, 1vw + 0.5rem, 1rem);
     margin-bottom: 1.5rem;
     line-height: 1.6;
+    text-align: center; /* Ensure centered */
+    max-width: 80%; /* Better readability */
+    margin-left: auto;
+    margin-right: auto;
 }
 .social-links {
     margin-top: 1rem;
     margin-bottom: 1.5rem;
     display: flex;
     gap: 1rem;
-    justify-content: flex-start; /* Align social links to the left */
+    justify-content: center; /* Changed from flex-start to center */
 }
 .social-links i {
     display: inline-flex;
@@ -255,44 +260,45 @@ nav {
     transition: 0.2s linear;
 }
 .social-links i:hover {
-    scale: 1.1; /* Slightly less aggressive scale */
+    scale: 1.1;
     color: white;
     background-color: rgb(109,67, 0);
-    box-shadow: 0 0 15px rgba(109,67,0, 0.7); /* Softer shadow */
+    box-shadow: 0 0 15px rgba(109,67,0, 0.7);
 }
 .content .btn {
-    text-align: left; /* Align button to the left */
+    text-align: center; /* Changed from left to center */
 }
 .content button {
-    width: auto; /* Auto width for flexibility */
-    padding: 0.75rem 2rem; /* Comfortable padding */
-    height: auto; /* Auto height */
-    margin: 0; /* Remove extra margin */
+    width: auto;
+    padding: 0.75rem 2rem;
+    height: auto;
+    margin: 0;
     background-color: rgb(109,67, 0);
     color: white;
     border: none;
     outline: none;
-    font-size: 1.1rem; /* Slightly larger font */
+    font-size: 1.1rem;
     font-weight: 700;
     border-radius: 5px;
     transition: 0.2s linear;
     cursor: pointer;
 }
 .content button:hover {
-    scale: 1.05; /* Slightly less aggressive scale */
+    scale: 1.05;
     color: rgb(109,67, 0);
     border: 2px solid rgb(109,67, 0);
     background-color: transparent;
     font-weight: 700;
-    box-shadow: 0 0 20px rgba(109,67, 0, 0.5); /* Softer shadow */
+    box-shadow: 0 0 20px rgba(109,67, 0, 0.5);
 }
 
-/* About Section Styling */
+/* All other sections remain exactly the same as your original CSS */
+/* About Section */
 #about {
     background: linear-gradient(to right, rgb(255, 255, 255), rgb(254, 215, 173));
     color: #000000;
-    padding: 5rem 2rem; /* Adjusted padding */
-    min-height: 100vh; /* Ensure the section fills viewport */
+    padding: 5rem 2rem;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -300,22 +306,22 @@ nav {
 
 .about-container {
     display: flex;
-    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    flex-wrap: wrap;
     align-items: center;
-    justify-content: center; /* Center content horizontally initially */
-    gap: 3rem; /* Increased gap for better spacing */
+    justify-content: center;
+    gap: 3rem;
     width: 100%;
     max-width: 1200px;
 }
 
 .about-text {
-    flex: 1 1 45%; /* Flex-grow, flex-shrink, flex-basis */
-    max-width: 600px; /* Max width for text block */
+    flex: 1 1 45%;
+    max-width: 600px;
     text-align: left;
 }
 
 .about-text h2 {
-    font-size: clamp(2rem, 4vw + 1rem, 3rem); /* Responsive font size */
+    font-size: clamp(2rem, 4vw + 1rem, 3rem);
     margin-bottom: 1.5rem;
     color: rgb(109, 67, 0);
     position: relative;
@@ -325,56 +331,41 @@ nav {
     content: '';
     position: absolute;
     bottom: 0;
-    left: 0; /* Align underline to the left */
+    left: 0;
     width: 60px;
     height: 3px;
     background-color: rgb(109, 67, 0);
 }
 
 .about-text p {
-    font-size: clamp(1rem, 1vw + 0.5rem, 1.1rem); /* Responsive font size */
+    font-size: clamp(1rem, 1vw + 0.5rem, 1.1rem);
     line-height: 1.7;
 }
 
 .about-image {
-    flex: 1 1 45%; /* Flex-grow, flex-shrink, flex-basis */
-    max-width: 500px; /* Max width for image block */
+    flex: 1 1 45%;
+    max-width: 500px;
     display: flex;
-    justify-content: center; /* Center image within its container */
-    /* Add these to remove any potential "box" from the container itself */
-    background-color: transparent; /* Ensure no background color */
-    border: none; /* Ensure no border */
-    padding: 0; /* Remove any padding on the container */
-    margin: 0; /* Remove any margin on the container if it was contributing */
-    box-shadow: none; /* Ensure no shadow on the container itself */
+    justify-content: center;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
 }
 
 .about-image img {
     max-width: 100%;
     height: auto;
-    /* border-radius and box-shadow removed previously are correct */
-    animation: float 3.5s ease-in-out infinite; /* Apply floating animation */
+    animation: float 3.5s ease-in-out infinite;
 }
 
 .about-image img {
     max-width: 100%;
     height: auto;
     border-radius: 10px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); /* More prominent shadow */
-    animation: float 3.5s ease-in-out infinite; /* Apply floating animation */
-}
-
-/* Define the floating animation */
-@keyframes float {
-    0% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px); /* Adjust the float distance as needed */
-    }
-    100% {
-        transform: translateY(0);
-    }
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    animation: float 3.5s ease-in-out infinite;
 }
 
 /* Skills Section */
@@ -391,7 +382,7 @@ nav {
 
 .skills__content .section__header {
     text-align: center;
-    font-size: clamp(2rem, 4vw + 1rem, 3rem); /* Responsive font size */
+    font-size: clamp(2rem, 4vw + 1rem, 3rem);
     margin-bottom: 1rem;
     color: rgb(109, 67, 0);
 }
@@ -400,13 +391,13 @@ nav {
     text-align: center;
     max-width: 700px;
     margin: 0 auto 3rem;
-    font-size: clamp(0.9rem, 1vw + 0.5rem, 1.1rem); /* Responsive font size */
+    font-size: clamp(0.9rem, 1vw + 0.5rem, 1.1rem);
     line-height: 1.6;
 }
 
 .skills__grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Adaptive columns */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 3rem;
     margin-top: 2rem;
 }
@@ -417,16 +408,16 @@ nav {
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
-    border: 1px solid rgba(109, 67, 0, 0.1); /* Subtle border */
+    border: 1px solid rgba(109, 67, 0, 0.1);
 }
 
 .skills__column:hover {
-    transform: translateY(-8px); /* More pronounced hover effect */
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* More prominent shadow */
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
 .skills__column h3 {
-    font-size: 1.8rem; /* Slightly larger heading */
+    font-size: 1.8rem;
     margin-bottom: 1.5rem;
     color: rgb(109, 67, 0);
     text-align: center;
@@ -440,23 +431,23 @@ nav {
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 60px; /* Slightly wider underline */
+    width: 60px;
     height: 3px;
     background-color: rgb(109, 67, 0);
 }
 
 .skills__list {
     list-style: none;
-    padding: 0; /* Remove default padding */
+    padding: 0;
 }
 
 .skills__list li {
-    padding: 0.9rem 0; /* Increased padding for list items */
+    padding: 0.9rem 0;
     font-size: 1.1rem;
     display: flex;
     align-items: center;
     border-bottom: 1px solid rgba(109, 67, 0, 0.1);
-    text-align: left; /* Align list item text left */
+    text-align: left;
 }
 
 .skills__list li:last-child {
@@ -465,8 +456,8 @@ nav {
 
 .skills__list i {
     color: rgb(109, 67, 0);
-    margin-right: 15px; /* Increased margin for icon */
-    font-size: 1.3rem; /* Slightly larger icon */
+    margin-right: 15px;
+    font-size: 1.3rem;
 }
 
 /* Works Section */
@@ -541,7 +532,6 @@ nav {
     display: block;
 }
 
-/* Works Section Enhancements */
 .works__content {
     padding: 1.5rem;
     text-align: center;
@@ -562,17 +552,6 @@ nav {
     font-weight: 500;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .work-filters {
-        gap: 0.5rem;
-    }
-    .filter-btn {
-        padding: 0.5rem 1rem;
-        font-size: 0.9rem;
-    }
-}
-
 /* Capstone Project Section */
 .capstone__container {
     background: linear-gradient(to right, rgb(255, 255, 255), rgb(254, 215, 173));
@@ -580,62 +559,51 @@ nav {
     padding: 5rem 2rem;
 }
 
-/* Remove the existing .video-container and .video-container video styles */
-
 .video-container {
-    /* Remove padding-bottom and height: 0; */
-    /* Instead, set a max-width and let the video define the height */
-    max-width: 900px; /* Or the exact intrinsic width of your video */
-    width: 100%; /* Make it responsive up to max-width */
-    margin: 3rem auto; /* Center the video */
-    background-color: #000; /* Black background for video placeholder */
+    max-width: 900px;
+    width: 100%;
+    margin: 3rem auto;
+    background-color: #000;
     border-radius: 10px;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-    /* Add display: flex and justify-content/align-items to center the video if it's smaller than the container initially */
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden; /* Important to hide overflow if video is contained */
+    overflow: hidden;
 }
 
 .video-container video {
-    /* Remove position: absolute, top, left, width: 100%, height: 100%; */
-    /* Set width to 100% and height to auto for responsive scaling within the max-width */
     width: 100%;
-    height: auto; /* This maintains the video's aspect ratio */
-    display: block; /* Removes any extra space below the video */
+    height: auto;
+    display: block;
     border: 0;
 }
-
-/* Certifications & E-badges Section is handled by inline style for now */
-
-/* Awards Section is handled by inline style for now */
 
 /* Contact Section */
 #contact {
     background: linear-gradient(to right, rgb(255, 255, 255), rgb(254, 215, 173));
     color: #000000;
     text-align: center;
-    padding: 5rem 2rem; /* Consistent padding */
+    padding: 5rem 2rem;
     min-height: auto;
 }
 
 .footer {
-    padding: 0; /* Remove footer specific padding, handled by section */
+    padding: 0;
 }
 
 .footer__container .section__header {
     text-align: center;
-    font-size: clamp(2rem, 4vw + 1rem, 3rem); /* Responsive font size */
-    margin-bottom: 2rem; /* Space below heading */
+    font-size: clamp(2rem, 4vw + 1rem, 3rem);
+    margin-bottom: 2rem;
 }
 
 .contact-info {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Adaptive columns */
-    gap: 2rem; /* Spacing between contact items */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
     margin-top: 3rem;
-    max-width: 1000px; /* Limit width */
+    max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -644,13 +612,13 @@ nav {
     display: flex;
     align-items: flex-start;
     gap: 1.5rem;
-    background-color: rgba(255, 255, 255, 0.95); /* Slightly more opaque */
-    padding: 2rem; /* Increased padding */
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 2rem;
     border-radius: 12px;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1); /* Softer shadow */
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
     border: 1px solid rgba(109, 67, 0, 0.1);
-    text-align: left; /* Ensure text alignment is left */
+    text-align: left;
 }
 
 .contact-item:hover {
@@ -661,30 +629,30 @@ nav {
 .contact-icon {
     width: 60px;
     height: 60px;
-    background: rgba(109, 67, 0, 0.15); /* Slightly more opaque background */
+    background: rgba(109, 67, 0, 0.15);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    font-size: 1.8rem; /* Larger icon */
+    font-size: 1.8rem;
     color: rgb(109, 67, 0);
 }
 
 .contact-details {
-    flex-grow: 1; /* Allow details to take available space */
+    flex-grow: 1;
 }
 
 .contact-details h4 {
     color: rgb(109, 67, 0);
-    margin-bottom: 0.75rem; /* More space below heading */
-    font-size: 1.2rem; /* Slightly larger font */
+    margin-bottom: 0.75rem;
+    font-size: 1.2rem;
 }
 
 .contact-details a {
-    color: #555; /* Slightly darker text for contrast */
+    color: #555;
     text-decoration: none;
-    font-size: 1.05rem; /* Slightly larger font */
+    font-size: 1.05rem;
     transition: color 0.3s ease;
     word-break: break-all;
 }
@@ -694,7 +662,7 @@ nav {
     text-decoration: underline;
 }
 
-/* Responsive Design for all sections */
+/* Responsive Design */
 @media (max-width: 1024px) {
     .main-container {
         flex-direction: column;
@@ -704,16 +672,16 @@ nav {
     .main-container .image {
         width: 60%;
         margin-bottom: 3rem;
-        order: 1; /* Image first */
+        order: 1;
     }
     .main-container .content {
         width: 90%;
         text-align: center;
-        order: 2; /* Content second */
+        order: 2;
     }
     .content .social-links,
     .content .btn {
-        justify-content: center; /* Center social links and button */
+        justify-content: center;
         text-align: center;
     }
     .about-container {
@@ -722,7 +690,7 @@ nav {
     }
     .about-text,
     .about-image {
-        flex: 1 1 100%; /* Full width on smaller screens */
+        flex: 1 1 100%;
         max-width: 800px;
         text-align: center;
     }
@@ -744,17 +712,17 @@ nav {
         top: 16px;  
         left: 15px;  
         font-size: 1.5rem;  
-        color: black; /* Ensure color is visible */
-        z-index: 101; /* Ensure it's above other elements in nav */
+        color: black;
+        z-index: 101;
     }  
     .nav-container .links {  
         display: none;  
     }  
     .hamburg, .cancel {  
         display: block;  
-        right: 1rem; /* Adjusted for consistent spacing */
-        top: 1.2rem; /* Adjusted for consistent spacing */
-        font-size: 1.8rem; /* Slightly smaller for mobile */
+        right: 1rem;
+        top: 1.2rem;
+        font-size: 1.8rem;
     }  
     .dropdown {
         top: 0;
@@ -762,14 +730,14 @@ nav {
     }
     .dropdown .links {
         flex-direction: column;
-        padding-top: 3rem; /* Space for the close button */
+        padding-top: 3rem;
     }
     .dropdown .links .cancel {
         top: 1.2rem;
         right: 1.2rem;
     }
     .home-section {
-        padding-top: 8vh; /* Adjust for smaller nav */
+        padding-top: 8vh;
         min-height: 92vh;
     }
     .main-container {
@@ -781,7 +749,7 @@ nav {
     }
     .main-container .content {
         width: 95%;
-        padding: 0 1rem; /* Add horizontal padding */
+        padding: 0 1rem;
     }
     .content h1 {
         font-size: clamp(1.8rem, 8vw, 2.5rem);
@@ -807,7 +775,7 @@ nav {
     }
 
     #about, #skills, #works, #capstone, #certifications, #awards, #contact {
-        padding: 4rem 1rem; /* Reduced padding for all sections */
+        padding: 4rem 1rem;
     }
     .about-text h2, .section__header {
         font-size: clamp(1.8rem, 8vw, 2.5rem);
@@ -816,7 +784,7 @@ nav {
         font-size: clamp(0.9rem, 2.5vw, 1rem);
     }
     .skills__grid {
-        grid-template-columns: 1fr; /* Stack columns on small screens */
+        grid-template-columns: 1fr;
         gap: 2rem;
     }
     .skills__column h3 {
@@ -844,7 +812,7 @@ nav {
         font-size: 0.8rem;
     }
     .contact-info {
-        grid-template-columns: 1fr; /* Stack contact items */
+        grid-template-columns: 1fr;
         gap: 1.5rem;
     }
     .contact-item {
@@ -909,7 +877,7 @@ nav {
         font-size: 1rem;
     }
     .works__grid {
-        grid-template-columns: 1fr; /* Single column for very small devices */
+        grid-template-columns: 1fr;
     }
     .works__card img {
         height: 180px;
