@@ -265,7 +265,7 @@
           font-size: 0.8rem;
         }
 
-        /* Certificate Modal */
+        /* Certificate Modal - Updated Responsive Styles */
         .cert-modal {
           display: none;
           position: fixed;
@@ -290,21 +290,33 @@
         .cert-modal-close {
           position: absolute;
           top: 10px;
-          right: 25px;
+          right: 10px;
           color: white;
-          font-size: 35px;
+          font-size: 28px;
           font-weight: bold;
           cursor: pointer;
+          z-index: 2;
+          background: rgba(0, 0, 0, 0.5);
+          width: 40px;
+          height: 40px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 50%;
+          transition: all 0.3s ease;
         }
 
         .cert-modal-close:hover {
           color: #fed7ad;
+          background: rgba(0, 0, 0, 0.8);
+          transform: scale(1.1);
         }
 
         .cert-slides {
           display: flex;
           overflow: hidden;
           position: relative;
+          width: 100%;
         }
 
         .cert-slide {
@@ -321,6 +333,7 @@
           max-width: 100%;
           max-height: 70vh;
           object-fit: contain;
+          border-radius: 8px;
         }
 
         .cert-prev, .cert-next {
@@ -368,29 +381,67 @@
           background-color: rgb(109, 67, 0);
         }
 
-        /* Responsive */
+        /* Responsive adjustments for modal */
         @media (max-width: 768px) {
-          .awards__grid {
-            grid-template-columns: 1fr;
-          }
-          
-          .award__card {
-            padding: 1.5rem;
-          }
-          
           .cert-modal-content {
             width: 95%;
             margin-top: 30px;
+            padding: 10px;
+          }
+          
+          .cert-modal-close {
+            top: 5px;
+            right: 5px;
+            font-size: 24px;
+            width: 36px;
+            height: 36px;
           }
           
           .cert-prev, .cert-next {
-            padding: 10px;
+            padding: 12px;
             font-size: 18px;
+          }
+          
+          .cert-image {
+            max-height: 60vh;
           }
           
           .cert-dot {
             height: 12px;
             width: 12px;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .cert-modal-content {
+            margin-top: 20px;
+          }
+          
+          .cert-modal-close {
+            top: 2px;
+            right: 2px;
+            font-size: 20px;
+            width: 32px;
+            height: 32px;
+          }
+          
+          .cert-prev, .cert-next {
+            padding: 8px;
+            font-size: 16px;
+          }
+          
+          .cert-image {
+            max-height: 50vh;
+          }
+          
+          .cert-dots {
+            margin-top: 10px;
+          }
+          
+          .cert-dot {
+            height: 10px;
+            width: 10px;
+            margin: 0 3px;
           }
         }
 
